@@ -48,6 +48,7 @@ I aim to address the following questions:
 * How many games (cycling through all 81 cards until no valid sets remain), require extra cards?
     * How may times will extra cards be required?
     * How many will require extra cards beyond 15?
+* how common are sets with 0, 1, 2, or 3 of the same attributes?
 
 
 ### Stretch Goals:
