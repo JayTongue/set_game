@@ -100,7 +100,7 @@ int main(int argc, char *argv[]) {
         int set_count = count_sets_from_indices(all_cards, combo);
         all_count[set_count]++;
         iterations --;
-    } while (next_combination(combo, N_CARDS, BOARD_SIZE) && iterations > 0);
+    } while (iterations > 0 && next_combination(combo, N_CARDS, BOARD_SIZE));
 
     for (int j = 0; j < MAX_SETS; j++) {
         if (all_count[j] > 0) {
