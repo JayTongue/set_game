@@ -4,7 +4,6 @@
 
 #define N_CARDS 81
 #define DIMS 4
-#define BOARD_SIZE 12
 #define MAX_SETS 220
 
 
@@ -19,12 +18,12 @@ bool next_combination(int *combo, int n, int k) {
     return true;
 }
 
-int count_sets_from_indices(int *all_cards, int *idxs) {
+int count_sets_from_indices(int *all_cards, int *idxs, int BOARD_SIZE) {
     int sets = 0;
 
-    for (int one = 0; one < 10; one++) {
-        for (int two = one + 1; two < 11; two++) {
-            for (int three = two + 1; three < 12; three++) {
+    for (int one = 0; one < BOARD_SIZE-2; one++) {
+        for (int two = one + 1; two < BOARD_SIZE-1; two++) {
+            for (int three = two + 1; three < BOARD_SIZE; three++) {
 
                 int c1 = idxs[one];
                 int c2 = idxs[two];
@@ -56,9 +55,8 @@ int count_sets_from_indices(int *all_cards, int *idxs) {
 int main(int argc, char *argv[]) {
     long long iterations = 100;
 
-    if (argc > 1) {
-        iterations = atoll(argv[1]);
-    } //so pass in -1 if you want to run the whole thing
+    iterations = atoll(argv[1]); //so pass in -1 if you want to run the whole thing
+    int BOARD_SIZE = atoll(argv[2]);
 
     int *all_cards = malloc(N_CARDS * DIMS * sizeof(int));
 
@@ -83,11 +81,11 @@ int main(int argc, char *argv[]) {
 
     long long *all_count = calloc(MAX_SETS, sizeof(long long));
 
-    int combo[12];
+    int combo[BOARD_SIZE];
     for (int i = 0; i < BOARD_SIZE; i++) combo[i] = i;
     
     do {
-        int set_count = count_sets_from_indices(all_cards, combo);
+        int set_count = count_sets_from_indices(all_cards, combo, BOARD_SIZE);
         all_count[set_count]++;
         iterations --;
     } while (iterations != 0 && next_combination(combo, N_CARDS, BOARD_SIZE));
