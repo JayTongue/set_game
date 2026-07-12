@@ -37,10 +37,10 @@ int count_sets_from_indices(int *all_cards, int *idxs) {
                     int y = all_cards[c2 * DIMS + dim];
                     int z = all_cards[c3 * DIMS + dim];
 
-                    if ((x + y + z) % 3 != 0) {
+                    if ((x + y + z) % 3 != 0) { //so (2, 2, 2) % 3 = 0, but (2, 2, 1) % 3 = 2
                         is_set = false;
                         break;
-                    }
+                    } 
                 }
 
                 if (is_set) {
@@ -58,13 +58,9 @@ int main(int argc, char *argv[]) {
 
     if (argc > 1) {
         iterations = atoll(argv[1]);
-    }
-    int *all_cards = malloc(N_CARDS * DIMS * sizeof(int));
+    } //so pass in -1 if you want to run the whole thing
 
-    if (all_cards == NULL) {
-        fprintf(stderr, "malloc failed\n");
-        return 1;
-    }
+    int *all_cards = malloc(N_CARDS * DIMS * sizeof(int));
 
     int card_idx = 0;
 
@@ -87,12 +83,6 @@ int main(int argc, char *argv[]) {
 
     long long *all_count = calloc(MAX_SETS, sizeof(long long));
 
-    if (all_count == NULL) {
-        fprintf(stderr, "calloc failed\n");
-        free(all_cards);
-        return 1;
-    }
-
     int combo[12];
     for (int i = 0; i < BOARD_SIZE; i++) combo[i] = i;
     
@@ -100,7 +90,7 @@ int main(int argc, char *argv[]) {
         int set_count = count_sets_from_indices(all_cards, combo);
         all_count[set_count]++;
         iterations --;
-    } while (iterations > 0 && next_combination(combo, N_CARDS, BOARD_SIZE));
+    } while (iterations != 0 && next_combination(combo, N_CARDS, BOARD_SIZE));
 
     for (int j = 0; j < MAX_SETS; j++) {
         if (all_count[j] > 0) {
