@@ -43,16 +43,24 @@ However, there is a noteable situation which can be seen as a "flaw" in the game
 
 I aim to address the following questions: 
 
+Broad possibility space parameter/statistic questions:
 * Of all possible 12 card displays, how many do not have a valid set?
 * Of all possible 15 card displays, how many do not have a valid set?
+* What proportion of sets have any given number of common attributes?
+
+Gameplay questions:
 * How many games (cycling through all 81 cards until no valid sets remain), require extra cards?
     * How may times will extra cards be required?
     * How many will require extra cards beyond 15?
-* how common are sets with 0, 1, 2, or 3 of the same attributes?
+* Accounting for the element of player choice, how many possible games are possible?
 
+Game Design questions:
+* What is the minimum board size to always guarantee a set?
 
 ### Stretch Goals:
 
 * Make a playable game
     * HTML/JS? Pygame?
 * Develop strategies for more optimized play
+    * When there are one/two cards with singular qualities, are they likely to be used?
+    * how often are extra cards needed back to back?
