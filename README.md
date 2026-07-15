@@ -46,7 +46,7 @@ I aim to address the following questions:
 Broad possibility space parameter/statistic questions:
 * Of all possible 12 card displays, how many do not have a valid set?
 * Of all possible 15 card displays, how many do not have a valid set?
-* What proportion of sets have any given number of common attributes?
+* What proportion of sets have any given number of monoattributes? SOLVED
 
 Gameplay questions:
 * How many games (cycling through all 81 cards until no valid sets remain), require extra cards?

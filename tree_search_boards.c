@@ -102,10 +102,19 @@ int main(int argc, char *argv[]) {
     int combo[BOARD_SIZE];
     for (int i = 0; i < BOARD_SIZE; i++) combo[i] = i;
     
+    long long counter = 0;
+    long long total = 70724320184700LL; 
+    long long one_percent = total / 100;
+
     do {
         int set_count = count_sets_from_indices(BOARD_SIZE, combo, lookup_table);
         all_count[set_count]++;
-        iterations --;
+        iterations--;
+        counter++;  
+        if (counter % one_percent == 0) {
+            printf("%lld%%\n", (100LL * counter) / total);
+            fflush(stdout);
+        }
     } while (iterations != 0 && next_combination(combo, NUM_CARDS, BOARD_SIZE));
 
     for (int j = 0; j < MAX_SETS; j++) {
