@@ -61,3 +61,18 @@ class Card:
 
         return card
     
+
+def display_grid(twelve):
+    for row_idxs in [list(range(4)), list(range(4, 8)), list(range(8, 12))]:
+        # print(row_idxs)
+        print('' + '   '.join([f'{i}'.rjust(3) for i in row_idxs]))
+        cards = list(map(lambda x: Card(twelve[x]), row_idxs))
+        for line in range(5):
+            line = [f'{card.vis[line]} ' for card in cards]
+            print(''.join(line))
+
+def print_cards_in_row(cards):
+    for idx in range(5):
+        line = [f'{card.vis[idx]} ' for card in cards]
+        line = ''.join(line)
+        print(line)

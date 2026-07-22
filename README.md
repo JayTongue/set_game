@@ -60,7 +60,7 @@ Game Design questions:
 ### Stretch Goals:
 
 * Make a playable game
-    * HTML/JS? Pygame?
+    * HTML/JS? Pygame? Bash?
 * Develop strategies for more optimized play
     * When there are one/two cards with singular qualities, are they likely to be used?
     * how often are extra cards needed back to back?
