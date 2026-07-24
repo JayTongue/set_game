@@ -75,26 +75,6 @@ def build_sym_table(n=3, d=4):
 def all_symmetries(coords, sym_table):
     return {frozenset(t[p] for p in coords) for t in sym_table}
 
-# def all_symmetries(coords, n=3):
-#     '''
-#     Returns a set of all possible rotations of a given 
-#     for a normalized minimum set, use with min_rotation
-#     '''
-#     off = (n - 1) / 2
-
-#     def transform(p, perm, signs):
-#         c = [p[k] - off for k in range(3)]
-#         c = [signs[k] * c[perm[k]] for k in range(3)]
-#         return tuple(int(round(v + off)) for v in c)
-
-#     results = set()
-#     for perm in permutations(range(3)):
-#         for signs in product((1, -1), repeat=3):
-#             board = frozenset(transform(p, perm, signs) for p in coords)
-#             results.add(board)
-#     return results
-
-
 def min_rotation(board, sym_table):
     return min(tuple(sorted(b)) for b in all_symmetries(board, sym_table))
 
