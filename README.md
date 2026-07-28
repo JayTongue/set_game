@@ -45,8 +45,10 @@ I aim to address the following questions:
 
 Broad possibility space parameter/statistic questions:
 * Of all possible 12 card displays, how many do not have a valid set?
+    * initlaly tried generating every 12 card board, but there are 70_724_320_184_700 possible boards. 
+    * so... sampling?
 * Of all possible 15 card displays, how many do not have a valid set?
-* What proportion of sets have any given number of monoattributes? SOLVED
+* SOLVED What proportion of sets have any given number of monoattributes?
 
 Gameplay questions:
 * How many games (cycling through all 81 cards until no valid sets remain), require extra cards?
@@ -55,7 +57,11 @@ Gameplay questions:
 * Accounting for the element of player choice, how many possible games are possible?
 
 Game Design questions:
-* What is the minimum board size to always guarantee a set?
+* SOLVED What is the minimum board size to always guarantee a set?
+    * this is a solved problem. the answer is 20. (Set Cap/ Affine Geometry)
+        * proven by Guiseppe Pellegrino in 1970, 4 years before the game was created in 1974???
+    * Experimentally prove the result: start with a pair, mark of possibles and impossibles, add the first possible. 
+    * What are the patterns it has to abide by?
 
 ### Stretch Goals:
 

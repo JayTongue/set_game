@@ -19,15 +19,15 @@ def board_check(board):
     '''
     Returns the int number of sets in a given board
     '''
-    sets = 0
+    set_count = 0
     set_list = []
     for comb in combinations(range(len(board)), 3):
         cards = [board[c] for c in comb]
         set_found = hash_colinearity(*cards)
         if set_found:
-            sets += 1
+            set_count += 1
             set_list.append(cards)
-    return sets, set_list
+    return set_count, set_list
 
 
 def combo_counter(n: int, k: int) -> int: 
