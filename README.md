@@ -43,30 +43,39 @@ However, there is a noteable situation which can be seen as a "flaw" in the game
 
 I aim to address the following questions: 
 
-Broad possibility space parameter/statistic questions:
+#### Broad possibility space parameter/statistic questions:
 * Of all possible 12 card displays, how many do not have a valid set?
     * initlaly tried generating every 12 card board, but there are 70_724_320_184_700 possible boards. 
     * so... sampling?
 * Of all possible 15 card displays, how many do not have a valid set?
+    * sample again probably
 * SOLVED What proportion of sets have any given number of monoattributes?
 
-Gameplay questions:
+#### Gameplay questions:
 * How many games (cycling through all 81 cards until no valid sets remain), require extra cards?
     * How may times will extra cards be required?
     * How many will require extra cards beyond 15?
 * Accounting for the element of player choice, how many possible games are possible?
+* over the course of the game, how do probabilites change?
 
-Game Design questions:
+#### Game Design questions:
 * SOLVED What is the minimum board size to always guarantee a set?
     * this is a solved problem. the answer is 20. (Set Cap/ Affine Geometry)
         * proven by Guiseppe Pellegrino in 1970, 4 years before the game was created in 1974???
     * Experimentally prove the result: start with a pair, mark of possibles and impossibles, add the first possible. 
     * What are the patterns it has to abide by?
+* Because of card replacement, if a board has one set, then you take it out, what is the chance that it gets replaced by cards that have no set? (peter norvig)
+    * 15 board probability is higher than initially supposed?
 
 ### Stretch Goals:
-
 * Make a playable game
     * HTML/JS? Pygame? Bash?
 * Develop strategies for more optimized play
     * When there are one/two cards with singular qualities, are they likely to be used?
-    * how often are extra cards needed back to back?
+    * What's the best way to detect when there is no set?
+    * Breaking down the attack surface:
+        * Relative rarity of a trait across a board
+        * visually clustering like cards to treat them as a unit?
+        * Id your own visual biases
+        * Static search strategy???
+        * Walking/pivoting based on the one that doesn't fit?
