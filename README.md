@@ -46,7 +46,8 @@ I aim to address the following questions:
 #### Broad possibility space parameter/statistic questions:
 * Of all possible 12 card displays, how many do not have a valid set?
     * initlaly tried generating every 12 card board, but there are 70_724_320_184_700 possible boards. 
-    * so... sampling?
+    * One solution- sample
+    * eliminating reflections and rotations, how many unique boards are there?
 * Of all possible 15 card displays, how many do not have a valid set?
     * sample again probably
 * SOLVED What proportion of sets have any given number of monoattributes?
@@ -57,6 +58,8 @@ I aim to address the following questions:
     * How many will require extra cards beyond 15?
 * Accounting for the element of player choice, how many possible games are possible?
 * over the course of the game, how do probabilites change?
+    * how much more likely is needing extra cards past 12? past 15?
+    * how much more liley are sets with no monoattributes?
 
 #### Game Design questions:
 * SOLVED What is the minimum board size to always guarantee a set?
@@ -64,8 +67,10 @@ I aim to address the following questions:
         * proven by Guiseppe Pellegrino in 1970, 4 years before the game was created in 1974???
     * Experimentally prove the result: start with a pair, mark of possibles and impossibles, add the first possible. 
     * What are the patterns it has to abide by?
+    * how many unique 20-card boards are there?
 * Because of card replacement, if a board has one set, then you take it out, what is the chance that it gets replaced by cards that have no set? (peter norvig)
     * 15 board probability is higher than initially supposed?
+* At 21-card boards standard, how would the game change?
 
 ### Stretch Goals:
 * Make a playable game

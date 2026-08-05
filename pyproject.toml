@@ -9,3 +9,8 @@ dependencies = [
     "numpy>=2.5.1",
     "tqdm>=4.68.4",
 ]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+]
